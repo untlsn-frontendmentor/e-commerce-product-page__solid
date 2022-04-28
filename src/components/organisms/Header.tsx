@@ -11,6 +11,9 @@ export const OpenNav = createContext<Signal<boolean>>();
 
 function Header() {
   const [openNav, setOpenNav] = createSignal(false);
+  const fullCount = createMemo(() => (
+    cartStore.products.reduce((acc, cur) => acc + cur.count, 0)
+  ));
 
   return (
     <OpenNav.Provider value={[openNav, setOpenNav]}>
@@ -24,7 +27,7 @@ function Header() {
           </a>
         </p>
         <CartButton
-          count={cartStore.products.length}
+          count={fullCount()}
           onClick={() => setCartStore('openBox', (v) => !v)}
         />
         <img src={avatar} alt="avatar" class="h-6" />
