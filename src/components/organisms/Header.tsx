@@ -1,9 +1,11 @@
 import { Signal } from 'solid-js';
 import Menu from '~/assets/images/icon-menu.svg';
 import Logo from '~/assets/images/logo.svg';
-import Cart from '~/assets/images/icon-cart.svg';
 import avatar from '~/assets/images/image-avatar.png';
 import LeftNav from '~/components/organisms/LeftNav';
+import CartButton from '~/components/atoms/CartButton';
+import { cartStore, setCartStore } from '~/store/cart';
+import CartBox from '~/components/organisms/CartBox';
 
 export const OpenNav = createContext<Signal<boolean>>();
 
@@ -21,11 +23,15 @@ function Header() {
             <Logo />
           </a>
         </p>
-        <Cart class="text-[#69707D]" />
+        <CartButton
+          count={cartStore.products.length}
+          onClick={() => setCartStore('openBox', (v) => !v)}
+        />
         <img src={avatar} alt="avatar" class="h-6" />
       </header>
       <hr class="h-16"/>
       <LeftNav />
+      <CartBox />
     </OpenNav.Provider>
   );
 }

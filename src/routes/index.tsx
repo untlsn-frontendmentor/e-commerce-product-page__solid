@@ -4,7 +4,7 @@ import Article from '~/components/organisms/Article';
 
 function Index() {
   return (
-    <>
+    <div class="font-sans">
       <Header />
       <main>
         <ImageScroller />
@@ -15,7 +15,7 @@ function Index() {
           discount={50}
         />
       </main>
-    </>
+    </div>
   );
 }
 
