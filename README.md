@@ -28,9 +28,9 @@ Simple solid template inspired by [Vitesse](https://github.com/antfu/vitesse) - 
  - ESlint with airbnb and solid
 
 ## Checklist
-  - [ ] Change fonts in uno config (presetWebFonts)
-  - [ ] Update tailwind theme extend (auto import to UnoCSS config)
-  - [ ] Clean up the READMEs and remove routes and components
+  - [x] Change fonts in uno config (presetWebFonts)
+  - [x] Update tailwind theme extend (auto import to UnoCSS config)
+  - [x] Clean up the READMEs and remove routes and components
   - [ ] Change favicon in public
 
 ## Usage

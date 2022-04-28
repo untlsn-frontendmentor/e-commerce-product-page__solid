@@ -15,8 +15,7 @@ export default defineConfig({
   shortcuts: {},
   variants: [
     (matcher) => {
-      if (!matcher.startsWith('<'))
-        return matcher;
+      if (!matcher.startsWith('<')) return matcher;
 
       const mediaPx = {
         sm: 640,
@@ -31,21 +30,19 @@ export default defineConfig({
       };
     },
     (matcher) => {
-      if (!matcher.startsWith('hocus:'))
-        return matcher;
+      if (!matcher.startsWith('hocus:')) return matcher;
 
       return {
         matcher: matcher.slice(6),
-        selector: s => `${s}:hover, ${s}:focus`,
+        selector: (s) => `${s}:hover, ${s}:focus`,
       };
     },
     (matcher) => {
-      if (!matcher.startsWith('group-hocus:'))
-        return matcher;
+      if (!matcher.startsWith('group-hocus:')) return matcher;
 
       return {
         matcher: matcher.slice(12),
-        selector: s => `.group:hover ${s}, .group:focus ${s}`,
+        selector: (s) => `.group:hover ${s}, .group:focus ${s}`,
       };
     },
   ],
@@ -58,9 +55,7 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        sans: 'DM Sans',
-        serif: 'DM Serif Display',
-        mono: 'DM Mono',
+        sans: 'Kumbh Sans:400,700',
       },
     }),
   ],
