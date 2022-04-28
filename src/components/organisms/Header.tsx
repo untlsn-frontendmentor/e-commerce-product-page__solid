@@ -6,10 +6,10 @@ import avatar from '~/assets/images/image-avatar.png';
 function Header() {
   return (
     <>
-      <header class="flex p-6 gap-4 items-center bg-white fixed top-0 left-0 w-full h-16">
+      <header class="flex p-6 gap-4 items-center bg-white fixed top-0 left-0 w-full h-16 z-1000">
         <Menu />
         <Logo class="flex-1" />
-        <Cart />
+        <Cart class="text-[#69707D]" />
         <img src={avatar} alt="avatar" class="h-6" />
       </header>
       <hr class="h-16"/>
