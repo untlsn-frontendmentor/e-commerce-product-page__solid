@@ -13,7 +13,9 @@ function CartBox() {
   return (
     <Show when={cartStore.openBox}>
       <article
-        ref={article}
+        ref={(ref) => {
+          article = ref;
+        }}
         tabIndex={-1}
         class="fixed top-18 left-0 bg-white z-1000 w-24/25 ml-1/50 rounded-xl"
         onBlur={() => setCartStore('openBox', false)}
